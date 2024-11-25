@@ -1,0 +1,4 @@
+Chromosome Summary:
+Total nucleotides: 143726002
+Total Ns: 1154851
+Total sequences: 1870
