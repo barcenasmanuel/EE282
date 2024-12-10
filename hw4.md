@@ -28,23 +28,35 @@ For each partition, generate the following plots:
 
 - **Sequence Length Distribution:**
   - Use a histogram with a log scale.
+  
   **≤ 100kb** 
+  
   - ![Sequence Length Distribution for ≤ 100kb](output/figures/le_100kb_length_histogram.png)
+  
   **> 100kb**
+  
   - ![Sequence Length Distribution for > 100kb](output/figures/gt_100kb_length_histogram.png)
 
 - **Sequence GC% Distribution:**
   - Use a histogram.
+  
   **≤ 100kb**
+  
   - ![GC% Distribution for ≤ 100kb](output/figures/le_100kb_gc_histogram.png)
+  
   **> 100kb**
+  
   - ![GC% Distribution for > 100kb](output/figures/gt_100kb_gc_histogram.png)
 
 - **Cumulative Sequence Size:**
   - Use plotCDF for visualization.
+  
   **≤ 100kb**
+  
   - ![Cumulative Sequence Size for ≤ 100kb](output/figures/CDF_le_100kb.png)
+  
   **> 100kb**
+  
   - ![Cumulative Sequence Size for > 100kb](output/figures/CDF_gt_100kb.png)
 
 ## Part 2: Assemble a Genome Using Pacbio HiFi Reads
