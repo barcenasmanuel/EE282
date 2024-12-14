@@ -30,6 +30,11 @@ To work with the environment using JupyterLab, follow detailed steps by UCI RCIC
 - Click on the link in MobaXterm that begins with: `http://127.0.0.1:...`
 - JupyterLab notebook should be opened in a web browser and in the same working directory as `detecting_bifurcations_inscRNA_seq_data`  in order to import the package
 
+### Running code on jupyterlab interface
+- Make sure to navigate to the working directory `code/jupyter_lab_fp/` to run analysis on the datasets
+- Once navigated to that working directory via the graphical interface open a notebook and all should run normally
+- **Note: Data can be provided upon request as it is too large to upload via GitHub**
+
 ## Cluster Analysis
 
 To perform clustering via Scanpy with UMAP and pseudotime projection via scVelo with RNA, we leveraged our method from our lab’s previous paper [[1]](#ref1). Making sure to activate JupyterLab as outlined above, we followed standard preprocessing given our defined function in the first code block `process_and_save_data`. We performed standard projection from tutorials involving Scanpy and scVelo for projection of these lower-dimensional embeddings of the high-dimensional data. We did the same visualization for all dataset combinations: OVCA420_TGFB1, OVCA420_EGF, OVCA420_TNF, A549_TGFB1, A549_EGF, and A549_TNF.
