@@ -28,7 +28,7 @@ To work with the environment using JupyterLab, follow detailed steps by UCI RCIC
 - Open local terminal and type: `ssh -L 8989:hpc3-14-00:8989:ucinetid@hpc3.rcic.uci.edu`
 - Log in using credentials and Duo authentication
 - Click on the link in MobaXterm that begins with: `http://127.0.0.1:...`
-- JupyterLab notebook should be open in a web browser
+- JupyterLab notebook should be opened in a web browser and in the same working directory as `detecting_bifurcations_inscRNA_seq_data`  in order to import the package
 
 ## Cluster Analysis
 
