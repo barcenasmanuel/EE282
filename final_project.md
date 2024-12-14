@@ -44,25 +44,25 @@ To perform the stability analysis and community detection, we leveraged the meth
 
 Using standard preprocessing from both Scanpy and scVelo, we create Uniform Manifold Approximation and Projection (UMAP) and pseudotime projection respectively, of the cell lines A549 and OVCA420 with three different known EMT inducers on each cell line. We notice that after preprocessing the data for the A549_TGFB1 dataset, the cells left for downstream analysis are noticeably reduced from the other A549 datasets of A549_EGF and A549_TNF. The cells used for downstream analysis are A549_TGFB1: 3,521 cells, A549_EGF: 12,243 cells, and A549_TNF: 12,776 cells. For the UMAP clustering of the A549 datasets, we can see from our figure that the cells (colored by experiment time) get better clustering as we go from EGF, TNF, and finally to TGFB1 inducers.
 
-![UMAP Clustering of A549 Datasets](output/figures/final_project/UMAP_A549.png)
+![UMAP Clustering of A549 Datasets](output/figures/final_project/UMAP_A549.jpg)
 
 *Figure 1: UMAP clustering of the A549 datasets showing clustering by experiment time for EGF, TNF, and TGFB1 inducers.*
 
 With the pseudotime calculations for the A549 datasets, we can see that as we go from EGF, TNF, and TGFB1 inducers, the arrow's direction aligns with the coloring of the cells, which is in their experimental time.
 
-![Pseudotime Projection of A549 Datasets](output/figures/final_project/pseudo_A549.png)
+![Pseudotime Projection of A549 Datasets](output/figures/final_project/pseudo_A549.jpg)
 
 *Figure 2: Pseudotime projection of the A549 datasets with arrows indicating cell state progression over time.*
 
 Similarly, for the OVCA420 datasets, we see a noticeable difference between the inducers used on the datasets. The cells used for downstream analysis after preprocessing for the OVCA420 cell line are OVCA420_EGF: 1,611, OVCA420_TNF: 2,589, OVCA420_TGFB1: 626. The UMAP clustering of the OVCA420 cell line with different EMT inducers shows that the order of clustering is best for OVCA420_TGFB1, and between the other inducers, there are no discernible clusters for experimental time.
 
-![UMAP Clustering of OVCA420 Datasets](output/figures/final_project/UMAP_OVCA420.png)
+![UMAP Clustering of OVCA420 Datasets](output/figures/final_project/UMAP_OVCA420.jpg)
 
 *Figure 3: UMAP clustering of the OVCA420 datasets showing clustering by experiment time for EGF, TNF, and TGFB1 inducers.*
 
 With the pseudotime calculations for the OVCA420 datasets, we can see that the TGFB1 inducer has the best pseudotime projection alignment with the experimental time cell color, and the two other inducers are both similar in the pseudotime projection calculations. This conflicts with the experimental data since we expect the EGF inducer to have better quality pseudotime projections than the TNF inducer, not a draw.
 
-![Pseudotime Projection of OVCA420 Datasets](output/figures/final_project/pseudo_OVCA420.png)
+![Pseudotime Projection of OVCA420 Datasets](output/figures/final_project/pseudo_OVCA420.jpg)
 
 *Figure 4: Pseudotime projection of the OVCA420 datasets showing progression alignment with experimental time.*
 
@@ -72,25 +72,25 @@ Using a modified method used to analyze the six datasets from the paper (Barcena
 
 We note that interestingly, despite TGFB1 having the dominant EMT effect on the A549 cell line, it displays similar trajectories of stability based on the Positive eigenvalues graph with the other inducers. We note that TGFB1 does have the largest eigenvalue, thus agreeing with the results of the experimental data of it being the strongest EMT inducer. Where there is slight disagreement with the experimental data is that the EGF promoter for the A549 cell line has one larger eigenvalue than the max for TNF; however, TNF on average has larger eigenvalues than EGF. We note that the only non-zero largest eigenvalue at the end of the pseudotime trajectory stems from the TNF inducer, which does conflict with the experimental data.
 
-![Stability Analysis of A549 Datasets](output/figures/final_project/stability_A549.png)
+![Stability Analysis of A549 Datasets](output/figures/final_project/stability_A549.jpg)
 
 *Figure 5: Stability analysis of the A549 datasets showing positive and largest eigenvalues as a function of pseudotime.*
 
 Turning our attention to the stability analysis of the OVCA420 cell line, we note that the trajectories of the inducers vary with TGFB1 showing the transition from a stable state to an unstable state and ending with a stable state based on the positive eigenvalues graph. We can see that in alignment with the experimental data, the TGFB1 inducer does have the largest eigenvalue according to the Largest eigenvalues graph. Furthermore, we see that in accordance with the experimental dataset, the EGF inducer is the runner-up EMT inducer since at the end of the pseudotime course the largest eigenvalue is zero. We see that the TNF inducer is a lesser EMT inducer since at the end of the pseudotime trajectory, the largest eigenvalue graph does not end at 0.
 
-![Stability Analysis of OVCA420 Datasets](output/figures/final_project/stability_OVCA420.png)
+![Stability Analysis of OVCA420 Datasets](output/figures/final_project/stability_OVCA420.jpg)
 
 *Figure 6: Stability analysis of the OVCA420 datasets showing positive and largest eigenvalues as a function of pseudotime.*
 
 Finally, reaching the analysis for the GRN evolution across pseudotime for both datasets influenced by EMT inducers, where we expect a large number of communities in stable states and smaller communities in unstable states. We note that for the A549 datasets, they share similar trajectories where we see that the TGFB1 inducer does show the best behavior that aligns with our expectations of EMT. EGF inducer follows by showing a similar behavior to TGFB1; however, the values reduced from TGFB1. The TNF inducer seems to have a large value of communities at the end of pseudotime; however, the number of communities does not decrease. This conflicts with the experimental dataset since the order of inducers should be TGFB1, TNF, and EGF.
 
-![Community Detection Analysis of A549 Datasets](output/figures/final_project/cd_A549.png)
+![Community Detection Analysis of A549 Datasets](output/figures/final_project/cd_A549.jpg)
 
 *Figure 7: Community detection analysis of the A549 datasets showing the number of GRN communities as a function of pseudotime.*
 
 The OVCA420 dataset demonstrates the desired behavior we expect from our top EMT inducer TGFB1, where a large number of communities are present at the beginning followed by a dip in the number of communities before rising up again and falling down at the end of pseudotime. We note that TNF follows a similar trajectory; however, at the end of pseudotime, the communities do not decrease again, and there are discrepancies between both community detection methods involving the initial number of communities. For EGF, we observe three transitions through stable states and similar behavior to TGFB1 inducer at the end of pseudotime. This agrees with the experimental data since the order of inducers is TGFB1, EGF, and TNF.
 
-![Community Detection Analysis of OVCA420 Datasets](output/figures/final_project/cd_OVCA420.png)
+![Community Detection Analysis of OVCA420 Datasets](output/figures/final_project/cd_OVCA420.jpg)
 
 *Figure 8: Community detection analysis of the OVCA420 datasets showing the number of GRN communities as a function of pseudotime.*
 
